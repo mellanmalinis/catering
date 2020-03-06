@@ -36,6 +36,11 @@
          <hr> 
          <div class="row justify-content-center">
             <div class="col-md-12 mt-4"> 
+              <?php 
+                if(isset($_SESSION["error"])){ 
+                    echo $_SESSION['error'];
+                }
+              ?> 
               <table class="table table-striped table-inverse ">
                 <thead class="thead-inverse">
                   <tr>
@@ -68,7 +73,7 @@
                             <td>'.$row['phone'].'</td> 
                             <td>
                               <a class="text-warning" href="edit_customer.php?id='.$row['customer_id'].'"><i class="fas fa-edit"></i></a> | 
-                              <a class="text-danger" href="application/customer.php?delete_customer='.$row['customer_id'].'"><i class="fas fa-trash"></i></a>
+                              <a class="text-danger" href="application/customer.php?delete_customer='.$row['customer_id'].'" onclick="return confirm(\'Are you sure you want to delete this data?\')"><i class="fas fa-trash"></i></a>
                             </td>
                           </tr>'; 
                       }
@@ -87,3 +92,6 @@
  </body>
 
  </html>
+<?php
+  unset($_SESSION["error"]);
+?>
