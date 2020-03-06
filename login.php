@@ -36,7 +36,7 @@ $page_title = "Login";
             <label for="password" class="text-white">Password</label>
             <input type="password" name="password" class="form-control" placeholder="Password" required="">
           </div>
-          <button class="btn btn-danger btn-block" type="submit" name="submit" value="Submit">Login</button>
+          <button class="btn btn-danger btn-block" type="submit" name="login">Login</button>
         </form>
         <p class="mt-5 text-white">No Account?  <a href="register.php"><u>register here.</u></a></p>
       </div>
