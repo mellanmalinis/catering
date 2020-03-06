@@ -17,7 +17,7 @@
                <span>Menu</span>
              </li>
              <li>
-               <a href="#">
+               <a href="dashboard.php">
                  <i class="fa fa-tachometer-alt"></i>
                  <span>Dashboard</span>
                </a>
@@ -28,7 +28,7 @@
        </div>
        <!-- sidebar-content  -->
        <div class="sidebar-footer bg-danger"> 
-         <a href="#">
+         <a href="application/logout.php" class="mt-2" onclick="return confirm('Are you sure you want to logout?')">
            <i class="fa fa-power-off"></i>
          </a>
        </div>
