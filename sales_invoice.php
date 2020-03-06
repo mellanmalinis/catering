@@ -143,6 +143,30 @@
       });
 
 
+
+      function load($count) {
+        var product_code = $('#products').val();
+        $.ajax({
+          url: "application/sales_invoice.php",
+          method: "POST",
+          dataType: "json",
+          data: {
+            product_code: product_code
+          },
+          success: function (data) {
+            for (x in data) {
+              $('#barcode' + count).val(data.product_code);
+              $('#buy_price' + count).val(data.price);
+              $('#unit' + count).val(data.unit);
+            }
+          },
+          error: function (xhr) {
+            console.info(xhr.responseText)
+
+          }
+        });
+      }
+
     });
   </script>
 
