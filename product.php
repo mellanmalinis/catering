@@ -67,8 +67,8 @@
                             <td>'.$row['price'].'</td> 
                             <td>'.$row['unit'].'</td>   
                             <td>
-                              <a class="text-warning" href="edit_customer.php?id='.$row['product_code'].'"><i class="fas fa-edit"></i></a> | 
-                              <a class="text-danger" href="application/customer.php?delete_customer='.$row['product_code'].'" onclick="return confirm(\'Are you sure you want to delete this data?\')"><i class="fas fa-trash"></i></a>
+                              <a class="text-warning" href="edit_product.php?id='.$row['product_code'].'"><i class="fas fa-edit"></i></a> | 
+                              <a class="text-danger" href="application/product.php?delete_product='.$row['product_code'].'" onclick="return confirm(\'Are you sure you want to delete this data?\')"><i class="fas fa-trash"></i></a>
                             </td>
                           </tr>'; 
                       }
