@@ -167,6 +167,25 @@
         });
       }
 
+      $(document).on('submit', '#sales-invoice', function (e) {
+        e.preventDefault();
+        console.info($(this).serialize());
+        $.ajax({
+          url: "application/sales_invoice.php",
+          method: "POST",
+          data: $(this).serialize(),
+          dataType: "json",
+          success: function (data) {
+            console.info(data);
+            // $('#modelId').modal('show')
+            // $('.modal-body').html(data)
+          },
+          error: function (x) {
+            console.info(x.responseText)
+          }
+        });
+      });
+
     });
   </script>
 
