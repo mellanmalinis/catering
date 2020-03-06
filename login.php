@@ -48,7 +48,7 @@
           </div>
           <button class="btn btn-danger btn-block" type="submit" name="login">Login</button>
         </form>
-        <p class="mt-5 text-white">No Account?  <a href="register.php"><u>register here.</u></a></p>
+        <p class="mt-5 text-white">No Account?  <a href="register.php"><u>Register here.</u></a></p>
       </div>
     </div>
   </div>
