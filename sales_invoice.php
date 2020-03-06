@@ -113,6 +113,33 @@
   </div>
   <?php require_once 'template/js.php'; ?>
 
+  <script>
+    $(document).ready(function () {
+      var final_total_amount = $('#final_total_amount').text();
+      var count = 1;
+      $(document).on('change', '#products', function () {
+        load(count);
+      });
+      $(document).on('click', '#add_row', function () {
+        count += 1;
+
+        var html_code = '';
+        html_code += '<tr id="row_id_' + count + '">';
+        html_code += '<td><input type="text" name="products[]" id="barcode' + count + '" class="form-control form-control-sm input-sm barcode" placeholder="Barcode"/></td>';
+        html_code += '<td><input type="number" name="quantity[]" min="1" id="quantity' + count + '" data-srno="' + count + '" placeholder="Qty"  class="form-control form-control-sm nput-sm quantity" /></td>';
+        html_code += '<td><input type="number" name="price[]" min="0.00" step="0.00" placeholder="Price" id="buy_price' + count + '" data-srno="' + count + '" class="form-control form-control-sm input-sm buy_price"></td>';
+        html_code += '<td><input type="text" name="unit[]" pattern="[A-Za-z]+" title="No number on unit" id="unit' + count + '" placeholder="Kilograms" data-srno="' + count + '" class="form-control form-control-sm input-sm unit"></td>';
+        html_code += '<td><button type="button" name="remove_row" id="' + count + '" class="btn btn-sm btn-danger btn-xs remove_row">Remove</button></td></tr>';
+        $("#invoice-item-table").append(html_code);
+        $(document).on('change', '#products', function () {
+          load(count);
+        });
+
+      });
+
+
+    });
+  </script>
 
 </body>
 
