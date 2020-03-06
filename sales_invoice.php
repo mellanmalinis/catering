@@ -136,6 +136,11 @@
         });
 
       });
+      $(document).on('click', '.remove_row', function () {
+        var row_id = $(this).attr("id");
+        $('#row_id_' + row_id).remove();
+        count -= 1;
+      });
 
 
     });
