@@ -31,7 +31,12 @@
       </div>
     </div>
     <div class="mt-5 row justify-content-center">
-      <div class="col-sm-4"> 
+      <div class="col-sm-4">
+        <?php 
+          if(isset($_SESSION["error"])){ 
+              echo $_SESSION['error'];
+          }
+        ?>  
         <form method="post" action="application/register.php">
           <div class="form-group">
             <label for="first_name" class="text-white">First Name</label>
@@ -66,4 +71,7 @@
   <?php require_once 'template/js.php'; ?>
 </body>
 
-</html> 
+</html>
+<?php
+  unset($_SESSION["error"]);
+?>
