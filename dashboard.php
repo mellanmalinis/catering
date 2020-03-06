@@ -1,5 +1,10 @@
  <?php 
-$page_title = "Dashboard";
+  session_start(); 
+  // check user if already login in
+  if(!isset($_SESSION["id"])){ 
+    header('location: login.php');
+  }
+  $page_title = "Dashboard"; 
 ?>
  <!DOCTYPE html>
  <html lang="en">

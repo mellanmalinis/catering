@@ -1,5 +1,10 @@
 <?php 
-$page_title = "Login";
+  session_start();  
+  // check user if already login in
+  if(isset($_SESSION["id"])){ 
+    header('location: dashboard.php');
+  }
+  $page_title = "Login"; 
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +31,13 @@ $page_title = "Login";
       </div>
     </div>
     <div class="mt-5 row justify-content-center">
-      <div class="col-sm-4">
-        <form ethod="post" action="">
+      <div class="col-sm-4 text-white">
+        <?php 
+          if(isset($_SESSION["error"])){ 
+              echo $_SESSION['error'];
+          }
+        ?>  
+        <form method="post" action="application/login.php">
           <div class="form-group">
             <label for="username" class="text-white">Username</label>
             <input type="text" name="username" class="form-control" placeholder="Username" required="">
@@ -46,3 +56,7 @@ $page_title = "Login";
 </body>
 
 </html>
+
+<?php
+  unset($_SESSION["error"]);
+?>
