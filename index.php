@@ -37,7 +37,6 @@ $page_title = "Home";
       </div>
     </div>  
   </div>
-</body>
-
-  <?php require_once 'template/js.php'; ?> 
+  <?php require_once 'template/js.php'; ?>
+</body> 
 </html>
