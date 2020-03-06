@@ -6,10 +6,10 @@ require_once 'config.php';
 if (isset($_POST['add'])) { 
   $description = mysqli_real_escape_string($db, $_POST['description']); 
   $price = mysqli_real_escape_string($db, $_POST['price']); 
-  $quantity = mysqli_real_escape_string($db, $_POST['quantity']);   
+  $unit = mysqli_real_escape_string($db, $_POST['unit']);   
 
   // insert to produt  
-  $sql = 'INSERT INTO product (description, price, unit) VALUES ("'.$description.'", "'.$price.'", "'.$quantity.'")';
+  $sql = 'INSERT INTO product (description, price, unit) VALUES ("'.$description.'", "'.$price.'", "'.$unit.'")';
   $insert = mysqli_query($db, $sql); 
   if($insert){  
     $_SESSION['error'] = '
@@ -27,4 +27,5 @@ if (isset($_POST['add'])) {
     header('location: ../add_product.php');
   }  
 }
+
 
