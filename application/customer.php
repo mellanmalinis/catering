@@ -61,5 +61,26 @@ if (isset($_POST['update'])) {
     ';  
     header('location: ../edit_customer.php?id=' . $customer_id);
   }  
-		
+}
+
+// Delete Customer 
+if (isset($_GET['delete_customer'])) { 
+  $customer_id = $_GET['delete_customer'];   
+  $sql = 'DELETE FROM customer WHERE customer_id=' . $customer_id;
+  $delete = mysqli_query($db, $sql);
+  if($delete){  
+    $_SESSION['error'] = '
+      <div class="alert alert-primary" role="alert">
+        <strong>Record Successfully Deleted!</strong>
+      </div>
+    '; 
+    header('location: ../customer.php');
+  }else{ 
+    $_SESSION['error'] = '
+      <div class="alert alert-danger" role="alert">
+        <strong>Data cannot be deleted, it is used in the other operation.</strong>
+      </div>
+    ';  
+    header('location: ../customer.php');
+  }  
 }
